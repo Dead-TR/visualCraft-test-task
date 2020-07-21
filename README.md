@@ -1,1 +1,3 @@
-# visualCraft-test-task
+-[Mock-up](https://#)
+
+-[Preview](https://dead-tr.github.io/#)
