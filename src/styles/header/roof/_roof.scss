@@ -1,0 +1,99 @@
+@import "./navigation";
+@import "./user";
+@import "./basket";
+
+.roof {
+  max-width: $max-width;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+
+  &__logo {
+    @include fonts-style ("Poppins", bold, 36px, normal, 48px, black);
+  }
+
+  &__menu {
+    display: flex;
+    @include fonts-style ("Aleo", 300, 12px, normal, 15px, black);
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 40px;
+    width: 150px;
+    margin-right: 10px;
+
+    & div {
+      position: absolute;
+      width: 0;
+      height: 100%;
+      transition: width 1s;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 10px;
+      background: url(../../../images/header/roof/search.png) no-repeat;
+      background-size: cover;
+      z-index: 2;
+    }
+
+    &:hover div {
+      width: 100%;
+
+      & input {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__search-item {
+    background: linear-gradient(to bottom, #bfdef8, #cad5e0, #ffffff);
+    box-shadow: inset -4px 5px 14px -2px #0000006e;
+    border-radius: 20px;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    padding-left: 40px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    opacity: 0;
+    transition: opacity 1s;
+
+    & :active {
+      opacity: 1;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+  }
+
+  &__basket {
+
+  }
+
+  &__user {
+
+  }
+}
+
+#search-activator {
+  display: none;
+
+  &:checked ~ div {
+    width: 100%;
+    
+    & input {
+      opacity: 1;
+    }
+  }
+}

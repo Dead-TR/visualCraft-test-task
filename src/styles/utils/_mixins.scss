@@ -1,7 +1,10 @@
-@mixin fonts-style($f-family, $f-weight, $f-size, $f-style, $color) {
+@mixin fonts-style($f-family, $f-weight, $f-size, $f-style, $l-height, $color) {
   font-family: $f-family, "Roboto", Arial, sans-serif;
   font-weight: $f-weight;
   font-size: $f-size;
   color: $color;
   font-style: $f-style;
+  line-height: $l-height;
 }
+
+//    @include fonts-style ("Poppins", normal, 14px, normal, 100%, black);
