@@ -1,0 +1,57 @@
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &__list {
+    max-width: 1920px;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  &__item {
+    position: relative;
+    transition: left 1s;
+
+
+    &_active-1 {
+      left: 0;
+    }
+
+    &_active-2 {
+      left: -1920px;
+    }
+
+    &_active-3 {
+      left: -3840px;
+    }
+  }
+
+  &__img {
+  }
+
+  &__dots {
+    position: absolute;
+    z-index: 3;
+    bottom: 30px;
+    display: flex;
+    left: calc(50% - 50px);
+  }
+
+  &__dot {
+    margin: 0 10px;
+    height: 15px;
+    width: 15px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &_active {
+      background: white;
+      cursor: default;
+
+    }
+  }
+}

@@ -1,6 +1,4 @@
 @import "./navigation";
-@import "./user";
-@import "./basket";
 
 .roof {
   max-width: $max-width;
@@ -75,14 +73,6 @@
   &__navigation {
     display: flex;
     align-items: center;
-  }
-
-  &__basket {
-
-  }
-
-  &__user {
-
   }
 }
 
