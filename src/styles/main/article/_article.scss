@@ -1,0 +1,22 @@
+.article {
+  display: flex;
+  justify-content: space-between;
+
+  &__content {
+
+  }
+
+  &__logo {
+    height: 100%;
+    margin-right: 25px;
+  }
+
+  &__title {
+    @include fonts-style ("Aleo", bold, 18px, normal, 100%, black);
+    margin-bottom: 25px;
+  }
+
+  &__text {
+    @include fonts-style ("Roboto", normal, 16px, normal, 26px, #898989);
+  }
+}

@@ -1,0 +1,16 @@
+@import "./tests/tests";
+@import "./profit/profit";
+@import "./article/article";
+
+.main {
+  max-width: $max-width;
+  margin: 0 auto;
+
+  &__tests {
+
+  }
+
+  &__profit {
+    margin: 200px 0;
+  }
+}

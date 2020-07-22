@@ -47,12 +47,17 @@ sliderActivator.addEventListener('click', (ev) => {
 
 setInterval(() => {
   const sliderItems = [...document.querySelectorAll('.slider__item')];
+  const miniSliderItems = [...document.querySelectorAll('.mini-slider__item')];
   const sliderDots = [...document.querySelectorAll('.slider__dot')];
 
   if (slideId > 2) {slideId = 0}
 
   for (const item of sliderItems) {
     item.className = `slider__item slider__item_active-${slideId + 1}`;
+  }
+
+  for (const item of miniSliderItems) {
+    item.className = `mini-slider__item mini-slider__item_active-${slideId + 1}`;
   }
 
   for (let i = 0; i < sliderDots.length; i++) {

@@ -15,7 +15,6 @@
     position: relative;
     transition: left 1s;
 
-
     &_active-1 {
       left: 0;
     }
@@ -27,9 +26,6 @@
     &_active-3 {
       left: -3840px;
     }
-  }
-
-  &__img {
   }
 
   &__dots {

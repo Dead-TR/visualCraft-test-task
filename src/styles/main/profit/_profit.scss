@@ -1,0 +1,22 @@
+.profit {
+
+  &__title {
+    @include fonts-style ("Gelasio", bold, 40px, normal, 100%, black);
+    max-width: 500px;
+
+    & span {
+      padding-left: 30px;
+    }
+  }
+
+  &__content {
+    margin: 50px 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 100px;
+  }
+
+  &__content-item {
+
+  }
+}

@@ -1,0 +1,30 @@
+.mini-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  &__list {
+    max-width: 488px;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  &__item {
+    position: relative;
+    transition: left 1.1s;
+
+    &_active-1 {
+      left: -976px;
+    }
+
+    &_active-2 {
+      left: -488px;
+    }
+
+    &_active-3 {
+      left: 0;
+    }
+  }
+}
