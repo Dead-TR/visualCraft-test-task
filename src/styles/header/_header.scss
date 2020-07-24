@@ -30,22 +30,5 @@
     & h1 {
       @include fonts-style ("Gelasio", bold, 80px, normal, 48px, white);
     }
-
-    & button {
-      margin: 50px 0 0;
-      padding: 20px 40px;
-      background: black;
-      color: white;
-      outline: none;
-      border: none;
-      @include fonts-style ("Aleo", normal, 14px, normal, 100%, white);
-      transition: background 1s, color 1s;
-      cursor: pointer;
-
-      &:hover {
-        background: white;
-        color: black;
-      }
-    }
   }
 }

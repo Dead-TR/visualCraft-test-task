@@ -2,5 +2,9 @@
 @import "utils";
 @import "reset";
 
+@import "./general";
 @import "./header/header";
 @import "./main/main";
+@import "./footer/footer";
+
+@import "./fixed-navigation";

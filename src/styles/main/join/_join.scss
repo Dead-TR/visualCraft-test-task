@@ -1,0 +1,22 @@
+.join {
+  margin: 50px 0 0;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  height: 700px;
+
+  &__content {
+    max-width: 650px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__img {
+    position: absolute;
+    left: 650px;
+    height: 100%;
+    width: auto;
+  }
+}

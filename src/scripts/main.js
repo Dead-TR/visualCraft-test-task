@@ -13,18 +13,18 @@ input.addEventListener('blur', () => {
 });
 
 // slider
+  // clickChange
 let slideId = 1;
-
 const sliderActivator = document.querySelector('.slider__dots');
 
 sliderActivator.addEventListener('click', (ev) => {
   const sliderItems = [...document.querySelectorAll('.slider__item')]
-  const targetDot = event.target;
+  const targetDot = ev.target;
   const sliderItemsId = targetDot.id.split('sliderDot_')[1];
 
-  slideId = sliderItemsId - 1;
+  if (targetDot.id.indexOf('sliderDot_') !== -1) {
 
-  if (targetDot.className.indexOf('slider__dot') !== -1) {
+    slideId = sliderItemsId - 1;
 
     for (const dot of [...sliderActivator.children]) {
       const check = (dot === targetDot);
@@ -45,6 +45,7 @@ sliderActivator.addEventListener('click', (ev) => {
   }
 });
 
+  // intervalChange
 setInterval(() => {
   const sliderItems = [...document.querySelectorAll('.slider__item')];
   const miniSliderItems = [...document.querySelectorAll('.mini-slider__item')];
@@ -62,7 +63,6 @@ setInterval(() => {
 
   for (let i = 0; i < sliderDots.length; i++) {
     if (i !== slideId) {
-
       sliderDots[i].className = 'slider__dot';
     }
 
@@ -72,5 +72,109 @@ setInterval(() => {
   }
 
   slideId++;
-
 }, 5000);
+
+// Responds
+const slideResponds = document.querySelector('.respond');
+const respondCardsBlock = document.querySelector('.respond__cards');
+const respondCards = [...respondCardsBlock.children];
+const distanceDifference = 400;
+const rightBtn = document.querySelector('.respond__slide_right');
+const leftBtn = document.querySelector('.respond__slide_left');
+let distanceCurrent = 0;
+
+if (respondCards.length <= 3) {leftBtn.style = 'display: none'}
+respondCardsBlock.style = `width: ${respondCards.length * 100}%`;
+
+slideResponds.addEventListener('click', (ev) => {
+  const btnHide = (current) => {
+    const hiddenCardsLength = distanceDifference
+    * ((respondCards.length - 3) - (respondCards.length - 3) * 2);
+
+    current >= 0
+      ? (rightBtn.style = 'display: none')
+      : (rightBtn.style = 'display: block');
+
+    current <= hiddenCardsLength
+      ? (leftBtn.style = 'display: none')
+      : (leftBtn.style = 'display: block');
+  };
+
+  if (ev.target.classList.contains('respond__slide')) {
+    // rightBtn
+    if (ev.target === rightBtn) {
+      distanceCurrent += distanceDifference;
+      btnHide(distanceCurrent);
+    }
+
+    // leftBtn
+    if (ev.target === leftBtn) {
+      distanceCurrent -= distanceDifference;
+      btnHide(distanceCurrent);
+    }
+
+    for (const card of respondCards) {
+      card.style = `left: ${distanceCurrent}px `;
+    }
+  }
+});
+
+// fixed navigation
+  // travel
+
+
+
+//  switch
+
+document.addEventListener('scroll', () => {
+
+  const navigations = [...document.querySelector('.fixed-navigation__list').children];
+
+  // console.log("navigations", navigations)
+
+  const sections = {
+    headerTop: [document.querySelector('#header'), 0],
+    testsTop: [document.querySelector('#tests'), 1],
+    benefitsTop: [document.querySelector('#benefits'), 2],
+    hworksTop: [document.querySelector('#hworks'), 3],
+    aboutTop: [document.querySelector('#about'), 4],
+    reviewsTop: [document.querySelector('#reviews'), 5],
+    joinTop: [document.querySelector('#join'), 6],
+  };
+
+  for (const sectionUnit in sections) {
+    // console.log("sectionUnit", sections[sectionUnit][0])
+    const distance = Math.floor((sections[sectionUnit][0].offsetTop) - (document.documentElement.scrollTop));
+    // console.log("distance", distance)
+
+    if (distance > -100 && distance < 100) {
+      navigations[sections[sectionUnit][1]].classList.add('fixed-navigation__active');
+
+      for (const i of navigations) {
+        if (i !== navigations[sections[sectionUnit][1]]) {
+          i.classList.remove('fixed-navigation__active');
+        }
+      }
+    }
+  }
+})
+
+// document.querySelector('.fixed-navigation').addEventListener('click', (ev) => {
+//   const listUnit = ev.target.parentElement;
+
+//   if (listUnit.classList.contains('fixed-navigation__element')) {
+//     const list = [...listUnit.parentElement.children];
+
+//     for (const i of list) {
+//       if (i !== listUnit) {
+//         i.classList.remove('fixed-navigation__active');
+//       }
+//     }
+
+//     for (const i of list) {
+//       if (i === listUnit) {
+//         listUnit.classList.add('fixed-navigation__active');
+//       }
+//     }
+//   }
+// });

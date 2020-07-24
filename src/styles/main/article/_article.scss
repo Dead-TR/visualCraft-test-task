@@ -9,6 +9,8 @@
   &__logo {
     height: 100%;
     margin-right: 25px;
+    @include fonts-style ("Gelasio", bold, 40px, normal, 100%, black);
+
   }
 
   &__title {

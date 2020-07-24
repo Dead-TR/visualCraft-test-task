@@ -1,0 +1,89 @@
+.footer {
+  max-width: 100%;
+  margin: 0;
+  position: relative;
+
+  &__line {
+    position: absolute;
+    top: 0;
+    height: 2px;
+    background-color: #d1d1d1;
+    width: 100%;
+  }
+
+  &__content {
+    max-width: $max-width;
+    margin: 0 auto;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+
+  &__navigation {
+    @include fonts-style ("Aleo", normal, 12px, normal, 15px, black);
+    
+    & a {
+      transition: color 0.5s;
+      padding: 0 15px;
+      color: black;
+
+      &:active,
+      &:visited {
+        color: black;
+      }
+
+      &:hover {
+        color: #747474;
+      }
+    }
+  }
+
+  &__contact {
+    
+    & button {
+      border: 1px solid #d9d9d9;
+      padding: 15px;
+      min-width: 150px;
+      background: white;
+      color: black;
+      transition: color 1s, background 1s;
+
+      &:hover {
+        background: black;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__service {
+    position: relative;
+    width: 100%;
+  }
+
+  &__links {
+    @include fonts-style ("Roboto", normal, 14px, normal, 27px, #747474);
+    
+    & a {
+      transition: color 0.5s;
+      padding: 0 15px;
+      color: #747474;
+      margin: 40px;
+
+      &:active,
+      &:visited {
+        color: #747474;
+      }
+
+      &:hover {
+        color: #000000;
+      }
+    }
+  }
+
+  &__logo {
+    @include fonts-style ("Poppins", bold, 36px, normal, 48px, black);
+  }
+}

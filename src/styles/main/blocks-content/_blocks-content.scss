@@ -1,4 +1,4 @@
-.profit {
+.blocks-content {
 
   &__title {
     @include fonts-style ("Gelasio", bold, 40px, normal, 100%, black);
@@ -7,6 +7,10 @@
     & span {
       padding-left: 30px;
     }
+  }
+
+  &__mini-title {
+    @include fonts-style ("Poppins", normal, 40px, normal, 100%, black);
   }
 
   &__content {

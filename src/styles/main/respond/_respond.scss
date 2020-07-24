@@ -1,0 +1,54 @@
+@import "./card/card";
+
+.respond {
+  position: relative;
+  padding: 40px 0;
+  width: 100%;
+  overflow: hidden;
+
+  &__slide {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    transition: transform 1s;
+
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    &_left {
+      left: 0;
+      background: url(../../../images/main/respond/slider/arrow-left.svg) no-repeat center;
+      background-size: contain;
+    }
+
+    &_right {
+      display: none;
+      right: 0;
+      background: url(../../../images/main/respond/slider/arrow-right.svg) no-repeat center;
+      background-size: contain;
+    }
+  }
+
+  &__title {
+    @include fonts-style ("Poppins", normal, 40px, normal, 100%, black);
+    text-align: center;
+  }
+
+  &__cards {
+    margin-top: 75px;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+  }
+
+  &__card {
+    box-sizing: border-box;
+    max-width: 300px;
+    position: relative;
+    left: 0;
+    margin: 0 50px;
+  }
+}

@@ -1,0 +1,43 @@
+$fixed-own-color: #000000;
+
+.fixed-navigation {
+  position: fixed;
+  right: 20px;
+  top: 20%;
+  text-align: right;
+  z-index: 5;
+
+  &__list {
+    @include fonts-style ("Poppins", normal, 14px, normal, 100%, $fixed-own-color);
+  
+    & :hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__element {
+    margin: 15px 0;
+    transition: margin 1s, width 1s, transform 1s;   
+  }
+
+  &__active {
+    margin-right: 25px;
+    position: relative;
+    font-size: 16px;
+
+    &::after {
+      content: "";
+      width: 25px;
+      height: 1px;
+      right: -30px;
+      margin-top: 5px;
+      background: $fixed-own-color;
+      position: absolute;
+
+    }
+  }
+
+  &__item {
+    color: $fixed-own-color;
+  }
+}

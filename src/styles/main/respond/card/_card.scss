@@ -1,0 +1,46 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 30px;
+  padding: 10px;
+  position: relative;
+  transition: box-shadow 0.8s, transform 0.8s, left 1s, right 1s;
+
+  &:hover {
+    box-shadow: -4px 5px 14px -2px #0000006e;
+    transform: scale(1.1);
+  }
+
+  &__img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__quotes,
+  &__after-text,
+  &__text,
+  &__name {
+    margin-top: 30px;
+  }
+
+  &__name {
+    @include fonts-style ("Poppins", normal, 18px, normal, 26px, black);
+  }
+
+  &__after-text,
+  &__text {
+    @include fonts-style ("Poppins", normal, 16px, normal, 26px, #898989);
+  }
+
+  &__after-text {
+    font-style: italic;
+  }
+  
+  &__quotes {
+    @include fonts-style ("Corben", bold, 75px, normal, 100%, black);
+  }
+}
