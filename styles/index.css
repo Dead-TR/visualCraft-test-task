@@ -35,12 +35,12 @@ a {
     background: white;
     color: black; }
 
+html,
 body {
   background: white;
+  width: 100%;
   max-width: 100%;
-  overflow-x: hidden; }
-
-html {
+  overflow-x: hidden;
   scroll-behavior: smooth; }
 
 .navigation {
