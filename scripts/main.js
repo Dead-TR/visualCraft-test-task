@@ -144,11 +144,11 @@ document.addEventListener('scroll', () => {
 
     if (distance > -100 && distance < 100) {
       navigations[sections[sectionUnit][1]]
-        .classList.add('fixed-navigation__active');
+        .classList.add('fixed-navigation__element_active');
 
       for (const i of navigations) {
         if (i !== navigations[sections[sectionUnit][1]]) {
-          i.classList.remove('fixed-navigation__active');
+          i.classList.remove('fixed-navigation__element_active');
         }
       }
     }

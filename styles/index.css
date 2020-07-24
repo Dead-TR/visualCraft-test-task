@@ -15,12 +15,6 @@ a {
   padding: 0;
   text-decoration: none; }
 
-html {
-  background: white;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden; }
-
 .own-button {
   margin: 50px 0 0;
   padding: 20px 40px;
@@ -40,6 +34,11 @@ html {
   .own-button:hover {
     background: white;
     color: black; }
+
+body {
+  background: white;
+  max-width: 100%;
+  overflow-x: hidden; }
 
 html {
   scroll-behavior: smooth; }
@@ -674,14 +673,31 @@ html {
 .fixed-navigation {
   position: fixed;
   right: 20px;
-  top: 20%;
+  top: 15%;
   text-align: right;
   z-index: 5; }
+  .fixed-navigation__button {
+    display: none;
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    right: 20px;
+    top: 5%;
+    background: url(../images/main/respond/slider/arrow-left.svg) no-repeat;
+    background-size: contain;
+    -webkit-transition: -webkit-transform 1s;
+    transition: -webkit-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s, -webkit-transform 1s; }
+    .fixed-navigation__button:hover {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1);
+      cursor: pointer; }
   .fixed-navigation__list {
     font-family: "Poppins", "Roboto", Arial, sans-serif;
-    font-weight: normal;
+    font-weight: 500;
     font-size: 14px;
-    color: #000000;
+    color: black;
     font-style: normal;
     line-height: 100%; }
     .fixed-navigation__list :hover {
@@ -693,19 +709,19 @@ html {
     transition: margin 1s, width 1s, -webkit-transform 1s;
     transition: margin 1s, width 1s, transform 1s;
     transition: margin 1s, width 1s, transform 1s, -webkit-transform 1s; }
-  .fixed-navigation__active {
-    margin-right: 25px;
-    position: relative;
-    font-size: 16px; }
-    .fixed-navigation__active::after {
-      content: "";
-      width: 25px;
-      height: 1px;
-      right: -30px;
-      margin-top: 5px;
-      background: #000000;
-      position: absolute; }
+    .fixed-navigation__element_active {
+      margin-right: 25px;
+      position: relative;
+      font-size: 16px; }
+      .fixed-navigation__element_active::after {
+        content: "";
+        width: 25px;
+        height: 1px;
+        right: -30px;
+        margin-top: 5px;
+        background: black;
+        position: absolute; }
   .fixed-navigation__item {
-    color: #000000; }
+    color: black; }
 
 /*# sourceMappingURL=index.css.map */
