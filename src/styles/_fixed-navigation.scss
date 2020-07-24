@@ -1,14 +1,31 @@
-$fixed-own-color: #000000;
+$fixed-own-color: black;
 
 .fixed-navigation {
   position: fixed;
   right: 20px;
-  top: 20%;
+  top: 15%;
   text-align: right;
   z-index: 5;
 
+  &__button {
+    display: none;
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    right: 20px;
+    top: 5%;
+    background: url(../images/main/respond/slider/arrow-left.svg) no-repeat;
+    background-size: contain;
+    transition: transform 1s ;
+
+    &:hover {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+  }
+
   &__list {
-    @include fonts-style ("Poppins", normal, 14px, normal, 100%, $fixed-own-color);
+    @include fonts-style ("Poppins", 500, 14px, normal, 100%, $fixed-own-color);
   
     & :hover {
       transform: scale(1.1);
@@ -17,23 +34,23 @@ $fixed-own-color: #000000;
 
   &__element {
     margin: 15px 0;
-    transition: margin 1s, width 1s, transform 1s;   
-  }
-
-  &__active {
-    margin-right: 25px;
-    position: relative;
-    font-size: 16px;
-
-    &::after {
-      content: "";
-      width: 25px;
-      height: 1px;
-      right: -30px;
-      margin-top: 5px;
-      background: $fixed-own-color;
-      position: absolute;
-
+    transition: margin 1s, width 1s, transform 1s; 
+ 
+    &_active {
+      margin-right: 25px;
+      position: relative;
+      font-size: 16px;
+  
+      &::after {
+        content: "";
+        width: 25px;
+        height: 1px;
+        right: -30px;
+        margin-top: 5px;
+        background: $fixed-own-color;
+        position: absolute;
+  
+      }
     }
   }
 

@@ -36,7 +36,6 @@ sliderActivator.addEventListener('click', (ev) => {
       if (dot === targetDot) {
         dot.className = 'slider__dot slider__dot_active';
       }
-
     }
 
     for (const item of sliderItems) {
@@ -58,7 +57,9 @@ setInterval(() => {
   }
 
   for (const item of miniSliderItems) {
-    item.className = `mini-slider__item mini-slider__item_active-${slideId + 1}`;
+    item.className = `
+      mini-slider__item mini-slider__item_active-${slideId + 1}
+    `;
   }
 
   for (let i = 0; i < sliderDots.length; i++) {
@@ -120,17 +121,10 @@ slideResponds.addEventListener('click', (ev) => {
 });
 
 // fixed navigation
-  // travel
-
-
-
-//  switch
-
 document.addEventListener('scroll', () => {
-
-  const navigations = [...document.querySelector('.fixed-navigation__list').children];
-
-  // console.log("navigations", navigations)
+  const navigations = [
+    ...document.querySelector('.fixed-navigation__list').children,
+  ];
 
   const sections = {
     headerTop: [document.querySelector('#header'), 0],
@@ -143,38 +137,20 @@ document.addEventListener('scroll', () => {
   };
 
   for (const sectionUnit in sections) {
-    // console.log("sectionUnit", sections[sectionUnit][0])
-    const distance = Math.floor((sections[sectionUnit][0].offsetTop) - (document.documentElement.scrollTop));
-    // console.log("distance", distance)
+    const distance = Math.floor(
+      (sections[sectionUnit][0].offsetTop)
+        - (document.documentElement.scrollTop)
+    );
 
     if (distance > -100 && distance < 100) {
-      navigations[sections[sectionUnit][1]].classList.add('fixed-navigation__active');
+      navigations[sections[sectionUnit][1]]
+        .classList.add('fixed-navigation__element_active');
 
       for (const i of navigations) {
         if (i !== navigations[sections[sectionUnit][1]]) {
-          i.classList.remove('fixed-navigation__active');
+          i.classList.remove('fixed-navigation__element_active');
         }
       }
     }
   }
-})
-
-// document.querySelector('.fixed-navigation').addEventListener('click', (ev) => {
-//   const listUnit = ev.target.parentElement;
-
-//   if (listUnit.classList.contains('fixed-navigation__element')) {
-//     const list = [...listUnit.parentElement.children];
-
-//     for (const i of list) {
-//       if (i !== listUnit) {
-//         i.classList.remove('fixed-navigation__active');
-//       }
-//     }
-
-//     for (const i of list) {
-//       if (i === listUnit) {
-//         listUnit.classList.add('fixed-navigation__active');
-//       }
-//     }
-//   }
-// });
+});
