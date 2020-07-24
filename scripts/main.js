@@ -154,3 +154,22 @@ document.addEventListener('scroll', () => {
     }
   }
 });
+
+let rotate = false;
+let deg = 180;
+
+document
+  .querySelector('.fixed-navigation__show')
+  .addEventListener('click', (ev) => {
+    if (rotate === false) {
+      ev.target.style = `transform: rotate(${deg}deg)`;
+      rotate = true;
+      deg += 180;
+    }
+
+    else {
+      ev.target.style = `transform: rotate(${deg}deg)`;
+      rotate = false;
+      deg += 180;
+    }
+  });

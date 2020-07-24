@@ -672,24 +672,27 @@ body {
 
 .fixed-navigation {
   position: fixed;
-  right: 20px;
+  right: 0;
   top: 15%;
   text-align: right;
-  z-index: 5; }
-  .fixed-navigation__button {
+  z-index: 5;
+  padding-right: 20px;
+  -webkit-transition: right 1s ease-in-out;
+  transition: right 1s ease-in-out; }
+  .fixed-navigation__show {
+    background: url(../images/main/respond/slider/arrow-left.svg) no-repeat;
     display: none;
     position: fixed;
     width: 20px;
     height: 20px;
     right: 20px;
     top: 5%;
-    background: url(../images/main/respond/slider/arrow-left.svg) no-repeat;
     background-size: contain;
-    -webkit-transition: -webkit-transform 1s;
-    transition: -webkit-transform 1s;
-    transition: transform 1s;
-    transition: transform 1s, -webkit-transform 1s; }
-    .fixed-navigation__button:hover {
+    -webkit-transition: -webkit-transform 0.7s;
+    transition: -webkit-transform 0.7s;
+    transition: transform 0.7s;
+    transition: transform 0.7s, -webkit-transform 0.7s; }
+    .fixed-navigation__show:hover {
       -webkit-transform: scale(1.1);
               transform: scale(1.1);
       cursor: pointer; }
@@ -723,5 +726,17 @@ body {
         position: absolute; }
   .fixed-navigation__item {
     color: black; }
+
+#fixedNavShow {
+  display: none; }
+
+@media only screen and (max-width: 1500px) {
+  .fixed-navigation {
+    right: -50%;
+    background: #ffffff6b; }
+    .fixed-navigation__show {
+      display: block; }
+  #fixedNavShow:checked ~ .fixed-navigation {
+    right: 0; } }
 
 /*# sourceMappingURL=index.css.map */
