@@ -88,9 +88,30 @@ if (respondCards.length <= 3) {leftBtn.style = 'display: none'}
 respondCardsBlock.style = `width: ${respondCards.length * 100}%`;
 
 slideResponds.addEventListener('click', (ev) => {
+
   const btnHide = (current) => {
-    const hiddenCardsLength = distanceDifference
-    * ((respondCards.length - 3) - (respondCards.length - 3) * 2);
+    const respondWidth = document.querySelector('.respond').offsetWidth;
+    let hiddenCardsLength;
+
+    switch (respondWidth) {
+      case 1200:
+        hiddenCardsLength = distanceDifference
+          * ((respondCards.length - 3) - (respondCards.length - 3) * 2);
+        break;
+
+      case 800:
+        hiddenCardsLength = distanceDifference
+          * ((respondCards.length - 2) - (respondCards.length - 2) * 2);
+        break;
+
+      case 400:
+        hiddenCardsLength = distanceDifference
+          * ((respondCards.length - 1) - (respondCards.length - 1) * 2);
+        break;
+
+      default:
+        break;
+    }
 
     current >= 0
       ? (rightBtn.style = 'display: none')
