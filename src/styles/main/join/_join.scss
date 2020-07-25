@@ -21,18 +21,6 @@
   }
 }
 
-// @media only screen and (max-width: 960px) {
-//   .join {
-//     &__img {
-//       // display: none;
-//     }
-//   }
-// }
-
-@media only screen and (max-width: 960px) {
-
-}
-
 @media only screen and (max-width: 800px) {
   .join {
     min-height: 400px;
@@ -46,8 +34,4 @@
       display: none;
     }
   }
-}
-
-@media only screen and (max-width: 500px) {
-
 }

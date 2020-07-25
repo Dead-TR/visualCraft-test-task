@@ -10,6 +10,9 @@
     "deploy": "gh-pages -d dist",
     "publish": "deploy",
     "lint": "stylelint src/**/*.scss && eslint src/**/*.js && htmllint --rc ./node_modules/@mate-academy/htmllint-config/.htmllintrc src/*.html",
+    "csslint": "stylelint src/**/*.scss",
+    "eslint": "eslint src/**/*.js",
+    "htmllint": "htmllint --rc ./node_modules/@mate-academy/htmllint-config/.htmllintrc src/*.html",
     "test": "npm run lint"
   },
   "keywords": [],
