@@ -87,3 +87,22 @@
     @include fonts-style ("Poppins", bold, 36px, normal, 48px, black);
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .footer {
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    &__links {
+      display: flex;
+
+      & a {
+        margin: 10px;
+      }
+    }
+  }
+}
