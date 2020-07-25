@@ -13,8 +13,9 @@
     <script type="text/javascript" src="scripts/main.js" defer></script>
   </head>
   <body>
+    <input type="checkbox" name="fixedNavShow" id="fixedNavShow">
     <nav class="fixed-navigation">
-      <div class="fixed-navigation__button"></div>
+      <label class="fixed-navigation__show" for="fixedNavShow"></label>
       <ul class="fixed-navigation__list">
 
         <li class="fixed-navigation__element fixed-navigation__element_active">
@@ -95,6 +96,8 @@
 
                 </ul>
               </nav>
+
+              
             </div>
   
             <div class="roof__navigation">
@@ -129,6 +132,105 @@
             </div>
             
           </div>
+
+          <input
+            type="checkbox"
+            class="mobile-navigation__checkbox"
+            name="mobileNavTurn"
+            id="mobileNavTurn"
+          >
+          <label class="mobile-navigation__turn" for="mobileNavTurn"></label>
+
+          <nav class="mobile-navigation">
+            <ul class="mobile-navigation__menu">
+
+              <li class="mobile-navigation__unit">
+                <input
+                  type="checkbox"
+                  class="mobile-navigation__checkbox"
+                  name="mobileNavUser"
+                  id="mobileNavUser"
+                >
+                <label for="mobileNavUser">Alex</label>
+
+                <div class="mobile-navigation__drop">
+                  <ul class="mobile-navigation__drop-list">
+
+                    <li class="mobile-navigation__drop-element">
+                      <a href="#header" class="mobile-navigation__drop-item">Start</a>
+                    </li>
+            
+                    <li class="mobile-navigation__drop-element">
+                      <a href="#tests" class="mobile-navigation__drop-item">Why use</a>
+                    </li>
+            
+                    <li class="mobile-navigation__drop-element">
+                      <a href="#benefits" class="mobile-navigation__drop-item">Benefits</a>
+                    </li>
+            
+                    <li class="mobile-navigation__drop-element">
+                      <a href="#hworks" class="mobile-navigation__drop-item">How works</a>
+                    </li>
+            
+                    <li class="mobile-navigation__drop-element">
+                      <a href="#about" class="mobile-navigation__drop-item">About Us</a>
+                    </li>
+            
+                    <li class="mobile-navigation__drop-element">
+                      <a href="#reviews" class="mobile-navigation__drop-item">Reviews</a>
+                    </li>
+            
+                    <li class="mobile-navigation__drop-element">
+                      <a href="#join" class="mobile-navigation__drop-item">Join!</a>
+                    </li>
+
+                  </ul>
+                </div>
+              </li>
+
+              <li class="mobile-navigation__unit">
+                <input
+                  type="checkbox"
+                  class="mobile-navigation__checkbox"
+                  name="mobileNavBucket"
+                  id="mobileNavBucket"
+                >
+                <label for="mobileNavBucket">Bucket <span>1</span></label>
+
+                <div class="mobile-navigation__drop">
+                  <ul class="mobile-navigation__drop-list">
+
+                    <li class="mobile-navigation__drop-element">
+                      <a href="#" class="mobile-navigation__drop-item">item</a>
+                    </li>
+            
+                  </ul>
+                </div>
+              </li>
+
+              <li class="mobile-navigation__unit">
+                <input
+                  type="checkbox"
+                  class="mobile-navigation__checkbox"
+                  name="mobileNavMenu"
+                  id="mobileNavMenu"
+                >
+                <label for="mobileNavMenu">Menu</label>
+
+                <div class="mobile-navigation__drop">
+                  <ul class="mobile-navigation__drop-list">
+
+                    <li class="mobile-navigation__drop-element">
+                      <a href="#" class="mobile-navigation__drop-item">Settings</a>
+                    </li>
+
+                  </ul>
+                </div>
+              </li>
+              
+            </ul>
+          </nav>
+
         </section>
       </div>
       <div class="header__slider">
@@ -200,7 +302,7 @@
             <div class="article">
               <div class="article__content">
                 <h1 class="article__title">Test It In Your Store</h1>
-                <p class="article__text">Our test & return feature will make it easy for you to find that bestseller, delight your customers & keep them coming back for more </p>
+                <p class="article__text">Our test & return feature will make it easy for you to find that bestseller, delight your customers & keep them coming back for more</p>
               </div>
             </div>
 
@@ -218,8 +320,8 @@
               <div class="article">
                 <img class="article__logo" src="./images/main/blocks-content/01.png" alt="logo">
                 <div class="article__content">
-                  <h1 class="article__title">Tableware</h1>
-                  <p class="article__text">Browse exciting products from a selection of quality makers, all in one place</p>
+                  <h1 class="article__title">Free  For Retailers</h1>
+                  <p class="article__text">Sparkinity is completely free for retailers. No markups or fees</p>
                 </div>
               </div>
             </div>
@@ -228,8 +330,8 @@
               <div class="article">
                 <img class="article__logo" src="./images/main/blocks-content/03.png" alt="logo">
                 <div class="article__content">
-                  <h1 class="article__title">Tableware</h1>
-                  <p class="article__text">Browse exciting products from a selection of quality makers, all in one place</p>
+                  <h1 class="article__title">Maker  Stories & Reviews</h1>
+                  <p class="article__text">In depth profiles on makers, see who you are buying from and how they rate</p>
                 </div>
               </div>
             </div>
@@ -238,8 +340,8 @@
               <div class="article">
                 <img class="article__logo" src="./images/main/blocks-content/05.png" alt="logo">
                 <div class="article__content">
-                  <h1 class="article__title">Tableware</h1>
-                  <p class="article__text">Browse exciting products from a selection of quality makers, all in one place</p>
+                  <h1 class="article__title">Easy Returns</h1>
+                  <p class="article__text">Send back any products that don’t sell within 90 days</p>
                 </div>
               </div>
             </div>
@@ -248,8 +350,8 @@
               <div class="article">
                 <img class="article__logo" src="./images/main/blocks-content/02.png" alt="logo">
                 <div class="article__content">
-                  <h1 class="article__title">Tableware</h1>
-                  <p class="article__text">Browse exciting products from a selection of quality makers, all in one place</p>
+                  <h1 class="article__title">Sector Trends</h1>
+                  <p class="article__text">Reporting and data analytics on trends in your business sector</p>
                 </div>
               </div>
             </div>
@@ -258,8 +360,8 @@
               <div class="article">
                 <img class="article__logo" src="./images/main/blocks-content/04.png" alt="logo">
                 <div class="article__content">
-                  <h1 class="article__title">Tableware</h1>
-                  <p class="article__text">Browse exciting products from a selection of quality makers, all in one place</p>
+                  <h1 class="article__title">Low Minimums</h1>
+                  <p class="article__text">Low opening order minimums for most makers</p>
                 </div>
               </div>
             </div>
@@ -268,8 +370,8 @@
               <div class="article">
                 <img class="article__logo" src="./images/main/blocks-content/06.png" alt="logo">
                 <div class="article__content">
-                  <h1 class="article__title">Tableware</h1>
-                  <p class="article__text">Browse exciting products from a selection of quality makers, all in one place</p>
+                  <h1 class="article__title">Unique Products</h1>
+                  <p class="article__text">A variety of products from talented and quality Makers</p>
                 </div>
               </div>
             </div>
@@ -326,7 +428,7 @@
                     Data shows that small stores are better positioned than
                     ever to take on retail giants as consumers  increasingly
                     seek curation and a personalised touch.
-                </p>
+               </p>
                 <p class="about__text">
                     Agility is a powerful weapon and we seek to empower the agile.
                   ​But to fulfil our vision we need to disrupt the age
@@ -334,7 +436,7 @@
                     personal experiences & understanding  of the  expenses incurred,
                     time and incredible effort that both buyers  & makers  make 
                     to connect. All because of the need to get a physical glimpse
-                </p>
+               </p>
                 <p class="about__text">
                     of that  unicorn called the bestseller before risking an order.<br>
                   ​We are changing  the buying process by providing retailers a medium
@@ -342,7 +444,7 @@
                     costs for creating distribution networks  &  store owners can easily
                     let their customers decide without taking on the risks involved with
                     buying decisions. 
-                </p>
+               </p>
               </div>
 
             <img src="./images/main/about/02.png" alt="table" class="about__small-img">
@@ -361,10 +463,10 @@
                 <h1 class="card__name">Joanna Booth</h1>
                 <p class="card__text">
                   Looking  forward to working with the Sparkinity team as they really understand the pressures of buying, I am looking for new products everyday and can't wait to try out their market test feature
-                </p>
+               </p>
                 <p class="card__after-text">
                   Owner of Space  London
-                </p>
+               </p>
                 <small class="card__quotes">”</small>
               </div>
 
@@ -377,10 +479,10 @@
                     with buyers as its so expensive and time consuming.
                     Sparkinity is an amazing concept. I have been waiting
                     for this for a long time
-                </p>
+               </p>
                 <p class="card__after-text">
                   Maker of ceramics
-                </p>
+               </p>
                 <small class="card__quotes">”</small>
               </div>
 
@@ -389,10 +491,10 @@
                 <h1 class="card__name">Ryan Finer</h1>
                 <p class="card__text">
                   As a small store we are constantly on our toes to delight our customers and keep them coming back for more. Its a very competitive market and finding unique products that work with our brand values & price architecture is hard. Sparkinity seems like a promising & valuable concep
-                </p>
+               </p>
                 <p class="card__after-text">
                   Owner of Workshop
-                </p>
+               </p>
                 <small class="card__quotes">”</small>
               </div>
 
@@ -401,10 +503,10 @@
                 <h1 class="card__name">Ryan Finer</h1>
                 <p class="card__text">
                   As a small store we are constantly on our toes to delight our customers and keep them coming back for more. Its a very competitive market and finding unique products that work with our brand values & price architecture is hard. Sparkinity seems like a promising & valuable concep
-                </p>
+               </p>
                 <p class="card__after-text">
                   Owner of Workshop
-                </p>
+               </p>
                 <small class="card__quotes">”</small>
               </div>
 
@@ -423,7 +525,7 @@
                     So whether you are a talented Maker
                     or a Retailer drop us a line to join
                     our platform. We would love to hear from you
-                </p>
+               </p>
                 <button class="own-button">REGISTER INTEREST</button>
               </div>
             </div>
@@ -431,6 +533,7 @@
 
           </div>
         </section>
+
       </main>
 
       <footer class="footer">

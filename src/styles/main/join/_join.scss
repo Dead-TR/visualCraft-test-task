@@ -20,3 +20,11 @@
     width: auto;
   }
 }
+
+@media only screen and (max-width: 960px) {
+  .join {
+    &__img {
+      display: none;
+    }
+  }
+}

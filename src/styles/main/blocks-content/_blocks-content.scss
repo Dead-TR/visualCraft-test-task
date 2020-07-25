@@ -15,12 +15,64 @@
 
   &__content {
     margin: 50px 0 0;
+    padding: 25px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 100px;
   }
 
   &__content-item {
+    padding: 10px;
+    transition: transform 1s, box-shadow 1s;
+    border-radius: 15px;
 
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: -4px 5px 14px -2px #0000006e;
+    }
+  }
+}
+
+@media only screen and (max-width: 960px) {
+
+  .blocks-content {
+    &__title {
+      max-width: 100%;
+      text-align: center;
+      margin: 0 15px;
+      font-size: 30px;
+
+      & span {
+        padding-left: 0;
+      }
+    }
+
+    &__mini-title {
+      text-align: center;
+    }
+
+    &__content {
+      grid-gap: 40px;
+    }
+
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .blocks-content {
+    &__content {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 40px;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .blocks-content {
+    &__content {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 40px;
+      margin: 25px;
+    }
   }
 }

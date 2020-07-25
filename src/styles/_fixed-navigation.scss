@@ -2,21 +2,23 @@ $fixed-own-color: black;
 
 .fixed-navigation {
   position: fixed;
-  right: 20px;
-  top: 15%;
+  right: 0;
+  top: 25%;
   text-align: right;
   z-index: 5;
+  padding-right: 20px;
+  transition: right 1s ease-in-out;
 
-  &__button {
+  &__show {
+    background: url(../images/main/respond/slider/arrow-left.svg) no-repeat;
     display: none;
     position: fixed;
     width: 20px;
     height: 20px;
     right: 20px;
-    top: 5%;
-    background: url(../images/main/respond/slider/arrow-left.svg) no-repeat;
+    top: 15%;
     background-size: contain;
-    transition: transform 1s ;
+    transition: transform 0.7s;
 
     &:hover {
       transform: scale(1.1);
@@ -34,7 +36,7 @@ $fixed-own-color: black;
 
   &__element {
     margin: 15px 0;
-    transition: margin 1s, width 1s, transform 1s; 
+    transition: margin 1s, width 1s, transform 1s;
  
     &_active {
       margin-right: 25px;
@@ -56,5 +58,28 @@ $fixed-own-color: black;
 
   &__item {
     color: $fixed-own-color;
+  }
+}
+
+#fixedNavShow {
+  display: none;
+}
+
+@media only screen and (max-width: 1500px) {
+
+  .fixed-navigation {
+    right: -50%;
+    background: #ffffff6b;
+
+    &__show {
+      display: block;
+    }
+  }
+
+  #fixedNavShow {
+
+    &:checked ~ .fixed-navigation {
+      right: 0;
+    }
   }
 }

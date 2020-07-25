@@ -45,3 +45,17 @@
     margin: 25px 0 0;
   }
 }
+
+@media only screen and (max-width: 960px) {
+  .about {
+
+    &__content {
+      padding: 60px 20px;
+    }
+
+    &__small-img,
+    &__big-img {
+      display: none;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 .article {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 40px;
 
   &__content {
 
@@ -15,7 +16,7 @@
 
   &__title {
     @include fonts-style ("Aleo", bold, 18px, normal, 100%, black);
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 
   &__text {

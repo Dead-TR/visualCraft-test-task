@@ -1,0 +1,131 @@
+$drop_item_color: white;
+
+.mobile-navigation {
+  position: fixed;
+  top: 80px;
+  left: -500px;
+  width: 100%;
+  height: 100%;
+  background-color: gainsboro;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  display: none;
+  transition: left 1s;
+
+  &__turn {
+    position: absolute;
+    display: none;
+    height: 30px;
+    width: 30px;
+    background: url(../../../images/header/roof/mobileNav/menu.svg) no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    top: 100px;
+    z-index: 6;
+  }
+
+  &__menu {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+  }
+
+  &__unit {
+    @include fonts-style ("Poppins", bold, 30px, normal, 100%, black);
+    padding: 25px 15px;
+    width: 100%;
+    text-align: center;
+
+    & span {
+      color: white;
+    }
+
+    & label {
+      transition: padding 1s;
+    }
+  }
+
+  &__drop {
+    width: 100%;
+    height: 0;
+    margin: 0;
+    @include fonts-style ("Poppins", bold, 20px, normal, 100%, $drop_item_color);
+    overflow: hidden;
+    transition: margin 0.7s, height 0.7s;
+  }
+
+  &__drop-list {
+    position: relative;
+    top: -1000px;
+    transition: top 0.7s;
+  }
+
+  &__drop-element {
+    padding: 5px;
+    transition: transform 1s;
+  
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__drop-item {
+    color: $drop_item_color;
+
+    &:visited,
+    &:active {
+      color: $drop_item_color;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+  }
+}
+
+#mobileNavMenu,
+#mobileNavBucket,
+#mobileNavUser {
+ 
+  &:checked ~ div {
+    height: 100%;
+    margin: 15px 0;
+
+    & ul {
+      top: 0;
+    }
+  }
+
+  &:checked ~ label {
+    padding-right: 50px;
+  }
+}
+
+#mobileNavTurn {
+
+  &:checked ~ .mobile-navigation {
+    left: 0;
+
+  }
+
+  &:checked ~ .mobile-navigation__turn {
+    position: fixed;
+    background: url(../../../images/header/roof/mobileNav/menuX.svg) no-repeat;
+  }
+
+}
+
+@media only screen and (max-width: 500px) {
+  .mobile-navigation {
+    display: flex;
+  }
+
+  .mobile-navigation__turn {
+    display: block;
+  }
+}
