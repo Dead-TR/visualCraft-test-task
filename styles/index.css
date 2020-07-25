@@ -903,7 +903,7 @@ body {
       .footer__links a:active, .footer__links a:visited {
         color: #747474; }
       .footer__links a:hover {
-        color: #000000; }
+        color: black; }
   .footer__logo {
     font-family: "Poppins", "Roboto", Arial, sans-serif;
     font-weight: bold;

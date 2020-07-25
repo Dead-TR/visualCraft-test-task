@@ -18,12 +18,11 @@ let slideId = 1;
 const sliderActivator = document.querySelector('.slider__dots');
 
 sliderActivator.addEventListener('click', (ev) => {
-  const sliderItems = [...document.querySelectorAll('.slider__item')]
+  const sliderItems = [...document.querySelectorAll('.slider__item')];
   const targetDot = ev.target;
   const sliderItemsId = targetDot.id.split('sliderDot_')[1];
 
   if (targetDot.id.indexOf('sliderDot_') !== -1) {
-
     slideId = sliderItemsId - 1;
 
     for (const dot of [...sliderActivator.children]) {
@@ -50,7 +49,7 @@ setInterval(() => {
   const miniSliderItems = [...document.querySelectorAll('.mini-slider__item')];
   const sliderDots = [...document.querySelectorAll('.slider__dot')];
 
-  if (slideId > 2) {slideId = 0}
+  if (slideId > 2) { slideId = 0; }
 
   for (const item of sliderItems) {
     item.className = `slider__item slider__item_active-${slideId + 1}`;
@@ -84,11 +83,11 @@ const rightBtn = document.querySelector('.respond__slide_right');
 const leftBtn = document.querySelector('.respond__slide_left');
 let distanceCurrent = 0;
 
-if (respondCards.length <= 3) {leftBtn.style = 'display: none'}
+if (respondCards.length <= 3) { leftBtn.style = 'display: none' }
+
 respondCardsBlock.style = `width: ${respondCards.length * 100}%`;
 
 slideResponds.addEventListener('click', (ev) => {
-
   const btnHide = (current) => {
     const respondWidth = document.querySelector('.respond').offsetWidth;
     let hiddenCardsLength;
