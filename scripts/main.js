@@ -92,20 +92,23 @@ slideResponds.addEventListener('click', (ev) => {
     const respondWidth = document.querySelector('.respond').offsetWidth;
     let hiddenCardsLength;
 
+    const setHiddenCardsLength = (cardsNum) => {
+      return (distanceDifference
+        * ((respondCards.length - cardsNum)
+        - (respondCards.length - cardsNum) * 2));
+    };
+
     switch (respondWidth) {
       case 1200:
-        hiddenCardsLength = distanceDifference
-          * ((respondCards.length - 3) - (respondCards.length - 3) * 2);
+        hiddenCardsLength = setHiddenCardsLength(3);
         break;
 
       case 800:
-        hiddenCardsLength = distanceDifference
-          * ((respondCards.length - 2) - (respondCards.length - 2) * 2);
+        hiddenCardsLength = setHiddenCardsLength(2);
         break;
 
       case 400:
-        hiddenCardsLength = distanceDifference
-          * ((respondCards.length - 1) - (respondCards.length - 1) * 2);
+        hiddenCardsLength = setHiddenCardsLength(1);
         break;
 
       default:
@@ -142,7 +145,7 @@ slideResponds.addEventListener('click', (ev) => {
 
 // fixed navigation
 document.addEventListener('scroll', () => {
-  const navigations = [
+  const navigation = [
     ...document.querySelector('.fixed-navigation__list').children,
   ];
 
@@ -163,11 +166,11 @@ document.addEventListener('scroll', () => {
     );
 
     if (distance > -100 && distance < 100) {
-      navigations[sections[sectionUnit][1]]
+      navigation[sections[sectionUnit][1]]
         .classList.add('fixed-navigation__element_active');
 
-      for (const i of navigations) {
-        if (i !== navigations[sections[sectionUnit][1]]) {
+      for (const i of navigation) {
+        if (i !== navigation[sections[sectionUnit][1]]) {
           i.classList.remove('fixed-navigation__element_active');
         }
       }
